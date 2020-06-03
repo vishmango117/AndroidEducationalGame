@@ -27,7 +27,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(SettingsFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_SettingsFragment_to_FirstFragment);
             }
         });
     }

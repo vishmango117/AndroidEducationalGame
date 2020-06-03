@@ -14,6 +14,8 @@ import androidx.navigation.fragment.NavHostFragment;
 public class MainMenuFragment extends Fragment {
 
     private Button playButton;
+    private Button howtoButton;
+
 
     @Override
     public View onCreateView(
@@ -36,6 +38,18 @@ public class MainMenuFragment extends Fragment {
                 startActivity(menu_to_game);
             }
         });
+
+        howtoButton = view.findViewById(R.id.instructions_button);
+
+        howtoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menu_to_game = new Intent(getContext(), HowtoActivity.class);
+                startActivity(menu_to_game);
+            }
+        });
+
+
 
 //        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
 //            @Override

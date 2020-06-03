@@ -19,6 +19,7 @@ public class GameSelectionFragment extends Fragment {
     private Button firstGame;
     private Button secondGame;
     private Button thirdGame;
+    private Button fourthGame;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,9 +36,9 @@ public class GameSelectionFragment extends Fragment {
         firstGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d("FirstGameButton", "Clicked");
+//              Log.d("FirstGameButton", "Clicked");
                 NavHostFragment.findNavController(GameSelectionFragment.this)
-                        .navigate(R.id.action_gameSelectionFragment_to_game1Fragment);
+                        .navigate(R.id.action_gameSelectionFragment_to_game2Fragment);
             }
         });
         //For Second Game
@@ -45,16 +46,24 @@ public class GameSelectionFragment extends Fragment {
         secondGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(GameSelectionFragment.this)
-                        .navigate(R.id.action_gameSelectionFragment_to_game2Fragment);
+                Intent myIntent = new Intent(getContext(), LoadingActivity.class);
+                startActivity(myIntent);
             }
         });
         thirdGame = view.findViewById(R.id.third_game);
         thirdGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getContext(), LoadingActivity.class);
-                startActivity(myIntent);
+                Intent myintent = new Intent(getContext(), DictionaryActivity.class);
+                startActivity(myintent);
+            }
+        });
+        fourthGame = view.findViewById(R.id.fourth_game);
+        fourthGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(GameSelectionFragment.this)
+                        .navigate(R.id.action_gameSelectionFragment_to_game1Fragment);
             }
         });
     }

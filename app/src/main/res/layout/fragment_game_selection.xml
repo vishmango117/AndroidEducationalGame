@@ -11,12 +11,13 @@
 
     <Button
         android:id="@+id/first_game"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="50dp"
-        android:text="First Game"
+        android:background="@drawable/second_imgbutton_scaled"
+        android:text="Operation What..!!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,22 +25,35 @@
 
     <Button
         android:id="@+id/second_game"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Second Game"
+        android:background="@drawable/second_imgbutton_scaled"
+        android:text="Science Quiz"
         app:layout_constraintEnd_toEndOf="@+id/first_game"
         app:layout_constraintStart_toStartOf="@+id/first_game"
         app:layout_constraintTop_toBottomOf="@+id/first_game" />
 
     <Button
         android:id="@+id/third_game"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Third Game"
+        android:background="@drawable/second_imgbutton_scaled"
+        android:text="Word Dictionary"
         app:layout_constraintEnd_toEndOf="@+id/second_game"
         app:layout_constraintStart_toStartOf="@+id/second_game"
         app:layout_constraintTop_toBottomOf="@+id/second_game" />
+
+    <Button
+        android:id="@+id/fourth_game"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/second_imgbutton_scaled"
+        android:text="Sum Them Up"
+        app:layout_constraintEnd_toEndOf="@+id/third_game"
+        app:layout_constraintStart_toStartOf="@+id/third_game"
+        app:layout_constraintTop_toBottomOf="@+id/third_game" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

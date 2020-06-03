@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-public class Game3Activity extends AppCompatActivity {
+public class QuizActivity extends AppCompatActivity {
 
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
@@ -31,6 +31,7 @@ public class Game3Activity extends AppCompatActivity {
     private RadioButton rb1;
     private RadioButton rb2;
     private RadioButton rb3;
+    private RadioButton rb4;
 
     private Button button_confirm_next;
 
@@ -69,6 +70,7 @@ public class Game3Activity extends AppCompatActivity {
         rb1 = findViewById(R.id.rb1);
         rb2 = findViewById(R.id.rb2);
         rb3 = findViewById(R.id.rb3);
+        rb4 = findViewById(R.id.rb4);
 
         button_confirm_next = findViewById(R.id.btn_confirm_next);
 
@@ -91,7 +93,7 @@ public class Game3Activity extends AppCompatActivity {
                         checkAnswer();
                     }
                    else {
-                        Toast.makeText(Game3Activity.this, "Please Select an Answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizActivity.this, "Please Select an Answer", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else {
@@ -115,6 +117,7 @@ public class Game3Activity extends AppCompatActivity {
             rb1.setText(currentQuestion.getOption1());
             rb2.setText(currentQuestion.getOption2());
             rb3.setText(currentQuestion.getOption3());
+            rb4.setText(currentQuestion.getOption4());
 
             questionCounter++;
             tvQnCount.setText("Question: " +questionCounter + "/" +questionCountTotal);
@@ -176,6 +179,7 @@ public class Game3Activity extends AppCompatActivity {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
         rb3.setTextColor(Color.RED);
+        rb4.setTextColor(Color.RED);
 
         switch (currentQuestion.getAnswerNum()) {
             case 1:
@@ -189,6 +193,10 @@ public class Game3Activity extends AppCompatActivity {
             case 3:
                 rb3.setTextColor(Color.GREEN);
                 tvQn.setText("Option 3 is correct");
+                break;
+            case 4:
+                rb4.setTextColor(Color.GREEN);
+                tvQn.setText("Option 4 is correct");
                 break;
         }
 

@@ -10,9 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class LoadingActivity extends AppCompatActivity {
 
     private Button button;
+    private Button share;
 
     private TextView tvhighscore;
     private SharedPreferences prefs;
@@ -32,7 +34,7 @@ public class LoadingActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myintent = new Intent(LoadingActivity.this, Game3Activity.class);
+                Intent myintent = new Intent(LoadingActivity.this, QuizActivity.class);
                 startActivityForResult(myintent, RESULT_FIRST_USER);
             }
         });

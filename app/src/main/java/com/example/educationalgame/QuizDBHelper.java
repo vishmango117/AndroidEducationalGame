@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.example.educationalgame.QuizContract.*;
+import com.example.educationalgame.QuizConstants.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
                 QuestionsTable.COLUMN_OPTION1 + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionsTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionsTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionsTable.COLUMN_ANSWER_NUM + " INTEGER" +
                 ")";
 
@@ -50,19 +51,19 @@ public class QuizDBHelper extends SQLiteOpenHelper {
     }
 
     private void fillQuestionsTable() {
-        Question q1 = new Question("A is correct", "A", "B", "C", 1);
+        Question q1 = new Question("Which Animal Lays Eggs", "Dog", "Cat", "Duck", "Sheep", 3);
         addQuestion(q1);
 
-        Question q2 = new Question("B is correct", "A", "B", "C", 2);
+        Question q2 = new Question("A Male Cow is called?", "Ox", "Dog", "Sheep", "Monkey",  1);
         addQuestion(q2);
 
-        Question q3 = new Question("C is correct", "A", "B", "C", 3);
+        Question q3 = new Question("All animals need food, air, and ____ to survive.", "House", "Water", "Chocolate", "Fruits", 2);
         addQuestion(q3);
 
-        Question q4 = new Question("A is correct again", "A", "B", "C", 1);
+        Question q4 = new Question("Which one is a fur-bearing animal?", "Hen", "Crocodile", "Tortoise", "Cat", 4);
         addQuestion(q4);
 
-        Question q5 = new Question("B is correct again", "A", "B", "C", 2);
+        Question q5 = new Question("What is Earth’s only natural satellite?", "Earth", "Moon", "Mars","Jupiter", 2);
         addQuestion(q5);
     }
 
@@ -72,6 +73,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
         cv.put(QuestionsTable.COLUMN_OPTION1, question.getOption1());
         cv.put(QuestionsTable.COLUMN_OPTION2, question.getOption2());
         cv.put(QuestionsTable.COLUMN_OPTION3, question.getOption3());
+        cv.put(QuestionsTable.COLUMN_OPTION4, question.getOption4());
         cv.put(QuestionsTable.COLUMN_ANSWER_NUM, question.getAnswerNum());
 
         db.insert(QuestionsTable.TABLE_NAME, null, cv);
@@ -89,6 +91,7 @@ public class QuizDBHelper extends SQLiteOpenHelper {
                 question.setOption1(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION3)));
+                question.setOption4(c.getString(c.getColumnIndex(QuestionsTable.COLUMN_OPTION4)));
                 question.setAnswerNum(c.getInt(c.getColumnIndex(QuestionsTable.COLUMN_ANSWER_NUM)));
                 qList.add(question);
             }while(c.moveToNext());
