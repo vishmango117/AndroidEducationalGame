@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.educationalgame.R;
 
+import java.util.Random;
 
 
 public class Game2Fragment extends Fragment {
@@ -30,12 +31,15 @@ public class Game2Fragment extends Fragment {
 
     private ProgressBar countdownTimer;
     private CountDownTimer countDownTimer;
-    private int i;
     private int score;
 
 
-    private Question myquestion;
-    private String myoperation = "";
+    public QuestionManager myquestions;
+    private Question currentQn;
+    private String myoperation;
+    private Random prng;
+
+    private int i;
 
 
     @Override
@@ -54,27 +58,83 @@ public class Game2Fragment extends Fragment {
         multiplication = view.findViewById(R.id.multiplication_operation);
         displayEquation = view.findViewById(R.id.display_equation);
         ScoreDisplay = view.findViewById(R.id.score_display);
-        myquestion = new Question(5,4);
-
+        prng = new Random();
         score = 0;
         ScoreDisplay.setText("0");
-
+        myoperation = "";
         runCountdowntimer(view);
-        runGame();
-
+        prepareGame();
+        for(int i=0;i<5; i++) {
+            runGame(i);
+        }
     }
 
-    public void runGame() {
-        displayEquation.setText(myquestion.number1 +" [] " + myquestion.number2 + " = 9");
-        addition.setOnClickListener(new View.OnClickListener() {
+    public void prepareGame() {
+        myquestions = new QuestionManager();
+        for(int i =0; i<5;i++) {
+            currentQn = new Question(prng.nextInt(10),prng.nextInt(10));
+            currentQn.getAnswer();
+            myquestions.questions.add(currentQn);
+        }
+    }
+
+
+    public void runGame(int index) {
+        currentQn = myquestions.questions.get(index);
+           displayEquation.setText(currentQn.number1 + "[]" + currentQn.number2 + "=" + currentQn.answer);
+           addition.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Log.d("ButtonStatus", "Clicked");
+                   myoperation = "+";
+                   System.out.println(currentQn.operation);
+                   if(currentQn.operation.equals(myoperation)) {
+                       Log.d("Equation", "Correct");
+                       score++; // Update Score
+                       displayEquation.setText(currentQn.number1 + "+" + currentQn.number2 + "=" + currentQn.answer);
+                       return;
+                   }
+               }
+           });
+        subtraction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myoperation= "+";
-                if(myoperation.equals(myquestion.operation)) {
-                    displayEquation.setText(myquestion.number1 +" + " + myquestion.number2 + " = 9");
-                    score++;
-                    ScoreDisplay.setText(String.valueOf(score));
-                    //Move to Next Question
+                Log.d("ButtonStatus", "Clicked");
+                myoperation = "-";
+                System.out.println(currentQn.operation);
+                if(currentQn.operation.equals(myoperation)) {
+                    Log.d("Equation", "Correct");
+                    score++; // Update Score
+                    displayEquation.setText(currentQn.number1 + "-" + currentQn.number2 + "=" + currentQn.answer);
+                    return;
+                }
+            }
+        });
+        division.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("ButtonStatus", "Clicked");
+                myoperation = "/";
+                System.out.println(currentQn.operation);
+                if(currentQn.operation.equals(myoperation)) {
+                    Log.d("Equation", "Correct");
+                    score++; // Update Score
+                    displayEquation.setText(currentQn.number1 + "/" + currentQn.number2 + "=" + currentQn.answer);
+                    return;
+                }
+            }
+        });
+        multiplication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("ButtonStatus", "Clicked");
+                myoperation = "*";
+                System.out.println(currentQn.operation);
+                if(currentQn.operation.equals(myoperation)) {
+                    Log.d("Equation", "Correct");
+                    score++; // Update Score
+                    displayEquation.setText(currentQn.number1 + "*" + currentQn.number2 + "=" + currentQn.answer);
+                    return;
                 }
             }
         });
@@ -85,6 +145,7 @@ public class Game2Fragment extends Fragment {
     }
 
     public void runCountdowntimer(View view) {
+        i = 0;
         countdownTimer = view.findViewById(R.id.countdown_timer);
         countdownTimer.setProgress(i);
         countDownTimer = new CountDownTimer(20000, 1000) {

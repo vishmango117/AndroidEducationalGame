@@ -1,5 +1,6 @@
 package com.example.educationalgame;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -7,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +18,7 @@ public class GameSelectionFragment extends Fragment {
 
     private Button firstGame;
     private Button secondGame;
+    private Button thirdGame;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +47,14 @@ public class GameSelectionFragment extends Fragment {
             public void onClick(View v) {
                 NavHostFragment.findNavController(GameSelectionFragment.this)
                         .navigate(R.id.action_gameSelectionFragment_to_game2Fragment);
+            }
+        });
+        thirdGame = view.findViewById(R.id.third_game);
+        thirdGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getContext(), LoadingActivity.class);
+                startActivity(myIntent);
             }
         });
     }
