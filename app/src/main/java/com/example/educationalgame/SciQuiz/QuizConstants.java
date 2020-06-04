@@ -1,4 +1,4 @@
-package com.example.educationalgame;
+package com.example.educationalgame.SciQuiz;
 
 import android.provider.BaseColumns;
 

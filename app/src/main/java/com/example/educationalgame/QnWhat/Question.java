@@ -1,4 +1,4 @@
-package com.example.educationalgame.game2;
+package com.example.educationalgame.QnWhat;
 
 import java.util.Random;
 
@@ -22,14 +22,14 @@ public class Question {
         if(this.operation.equals("+")) {
             this.answer = this.number1 + this.number2;
         }
-        else if(this.operation.equals("=")) {
-            this.answer = this.number1 + this.number2;
+        else if(this.operation.equals("-")) {
+            this.answer = this.number1 - this.number2;
         }
         else if(this.operation.equals("/")) {
-            this.answer = this.number1 + this.number2;
+            this.answer = this.number1 / this.number2;
         }
-        if(this.operation.equals("*")) {
-            this.answer = this.number1 + this.number2;
+        else if(this.operation.equals("*")) {
+            this.answer = this.number1 * this.number2;
         }
     }
 

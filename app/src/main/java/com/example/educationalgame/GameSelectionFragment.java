@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.educationalgame.SciQuiz.LoadingActivity;
+import com.example.educationalgame.WordDict.DictionaryActivity;
+
 
 public class GameSelectionFragment extends Fragment {
 
@@ -31,7 +34,7 @@ public class GameSelectionFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // For the First Game
+        // For the First Game (Operation What..!!)
         firstGame = view.findViewById(R.id.first_game);
         firstGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +44,7 @@ public class GameSelectionFragment extends Fragment {
                         .navigate(R.id.action_gameSelectionFragment_to_game2Fragment);
             }
         });
-        //For Second Game
+        //For Second Game (Word Dictionary)
         secondGame = view.findViewById(R.id.second_game);
         secondGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +53,7 @@ public class GameSelectionFragment extends Fragment {
                 startActivity(myIntent);
             }
         });
+        // For the Third Game Word Dictionary
         thirdGame = view.findViewById(R.id.third_game);
         thirdGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +62,7 @@ public class GameSelectionFragment extends Fragment {
                 startActivity(myintent);
             }
         });
+        // For the Fourth Game Sum them Up..
         fourthGame = view.findViewById(R.id.fourth_game);
         fourthGame.setOnClickListener(new View.OnClickListener() {
             @Override

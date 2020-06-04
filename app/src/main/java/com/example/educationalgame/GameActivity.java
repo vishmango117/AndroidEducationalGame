@@ -17,4 +17,16 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
     }
 
+    @Override
+    public void onBackPressed(){
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            Log.i("GameActivity", "popping backstack");
+            fm.popBackStack();
+        } else {
+            Log.i("GameActivity", "nothing on backstack, calling super");
+            super.onBackPressed();
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.educationalgame;
+package com.example.educationalgame.SciQuiz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.educationalgame.R;
 
 
 public class LoadingActivity extends AppCompatActivity {

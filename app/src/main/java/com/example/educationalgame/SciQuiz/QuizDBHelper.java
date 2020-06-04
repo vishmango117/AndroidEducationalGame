@@ -1,4 +1,4 @@
-package com.example.educationalgame;
+package com.example.educationalgame.SciQuiz;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-import com.example.educationalgame.QuizConstants.*;
+import com.example.educationalgame.SciQuiz.QuizConstants.*;
 
 import java.util.ArrayList;
 import java.util.List;

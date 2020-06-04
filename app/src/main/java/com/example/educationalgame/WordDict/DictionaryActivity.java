@@ -1,4 +1,4 @@
-package com.example.educationalgame;
+package com.example.educationalgame.WordDict;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.educationalgame.R;
 
 
 public class DictionaryActivity extends AppCompatActivity {

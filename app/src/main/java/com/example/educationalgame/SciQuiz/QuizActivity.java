@@ -1,4 +1,4 @@
-package com.example.educationalgame;
+package com.example.educationalgame.SciQuiz;
 
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.educationalgame.R;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -23,6 +25,7 @@ public class QuizActivity extends AppCompatActivity {
     private static final long COUNTDOWN_IN_MILLIS = 30000;
 
 
+    //TextView for Displays
     private TextView tvQn;
     private TextView tvScore;
     private TextView tvQnCount;
@@ -63,9 +66,9 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game3);
 
         countdown = findViewById(R.id.clock);
-        tvQn = findViewById(R.id.question_display);
+        tvQn = findViewById(R.id.display_equation);
         tvScore = findViewById(R.id.score_counter);
-        tvQnCount = findViewById(R.id.question_no);
+        tvQnCount = findViewById(R.id.qnwhat_qnno);
         rbgroup = findViewById(R.id.rb_group);
         rb1 = findViewById(R.id.rb1);
         rb2 = findViewById(R.id.rb2);

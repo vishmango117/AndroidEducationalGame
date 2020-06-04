@@ -4,117 +4,119 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".game2.Game2Fragment">
+    tools:context=".QnWhat.Game2Fragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
+
+
+    <TextView
+        android:id="@+id/score_counter"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:weightSum="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="20sp"
+        android:text="Score: 0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/score_display"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_margin="10dp"
-            android:layout_weight="0.8"
-            android:background="@drawable/second_imgbutton_scaled" />
+    <TextView
+        android:id="@+id/qnwhat_qnno"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:textSize="20sp"
+        android:text="Question 1 / 5"
+        app:layout_constraintStart_toStartOf="@+id/score_counter"
+        app:layout_constraintTop_toBottomOf="@+id/score_counter" />
 
-        <TextView
-            android:id="@+id/clock"
-            android:layout_width="171dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:text="00:30"
-            android:gravity="end|center"
-            android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="00:30"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/display_equation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="40sp"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="@+id/clock"
+        app:layout_constraintStart_toStartOf="@+id/score_counter"
+        app:layout_constraintTop_toBottomOf="@+id/qnwhat_qnno" />
+
+
+    <Button
+        android:id="@+id/addition_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="140dp"
+        android:layout_weight="0.5"
+        android:text="+"
+        android:textSize="70sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_equation" />
+
+
+    <Button
+        android:id="@+id/subtraction_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="76dp"
+        android:layout_weight="0.5"
+        android:text="-"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/addition_operation"
+        app:layout_constraintTop_toBottomOf="@+id/display_equation" />
+
+    <Button
+        android:id="@+id/division_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_weight="0.5"
+        android:text="/"
+        android:textSize="70sp"
+        app:layout_constraintStart_toStartOf="@+id/addition_operation"
+        app:layout_constraintTop_toBottomOf="@+id/addition_operation" />
+
+    <Button
+        android:id="@+id/multiplication_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="76dp"
+        android:layout_weight="0.5"
+        android:text="*"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toEndOf="@+id/division_operation"
+        app:layout_constraintTop_toBottomOf="@+id/subtraction_operation" />
+
+    <Button
+        android:id="@+id/next_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Test"
-        android:gravity="center|bottom"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/display_equation"
-        app:layout_constraintStart_toStartOf="@+id/display_equation"
-        app:layout_constraintTop_toBottomOf="@+id/display_equation">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
-
-            <Button
-                android:id="@+id/addition_operation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="+"
-                android:textSize="50sp" />
-
-            <Button
-                android:id="@+id/subtraction_operation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="-"
-                android:textSize="50sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/division_operation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="/"
-
-                android:textSize="50sp" />
-
-            <Button
-                android:id="@+id/multiplication_operation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="*"
-                android:textSize="50sp" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        android:layout_marginBottom="76dp"
+        android:text="Confirm Selection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/multiplication_operation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/division_operation"
+        app:layout_constraintTop_toBottomOf="@+id/display_equation"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

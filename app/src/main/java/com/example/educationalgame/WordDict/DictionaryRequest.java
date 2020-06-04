@@ -1,4 +1,4 @@
-package com.example.educationalgame;
+package com.example.educationalgame.WordDict;
 
 import android.content.Context;
 import android.os.AsyncTask;

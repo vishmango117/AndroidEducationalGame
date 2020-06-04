@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/question_no"
+        android:id="@+id/qnwhat_qnno"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:textSize="20sp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/question_display"
+        android:id="@+id/display_equation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -47,7 +47,7 @@
         android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="@+id/clock"
         app:layout_constraintStart_toStartOf="@+id/score_counter"
-        app:layout_constraintTop_toBottomOf="@+id/question_no" />
+        app:layout_constraintTop_toBottomOf="@+id/qnwhat_qnno" />
 
     <RadioGroup
         android:id="@+id/rb_group"
@@ -55,10 +55,10 @@
         android:layout_height="500dp"
         android:layout_marginTop="36dp"
         android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="@+id/question_display"
+        app:layout_constraintEnd_toEndOf="@+id/display_equation"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/question_display"
-        app:layout_constraintTop_toBottomOf="@+id/question_display">
+        app:layout_constraintStart_toStartOf="@+id/display_equation"
+        app:layout_constraintTop_toBottomOf="@+id/display_equation">
 
         <RadioButton
             android:id="@+id/rb1"
