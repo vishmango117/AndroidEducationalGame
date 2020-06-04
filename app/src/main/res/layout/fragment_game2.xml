@@ -47,7 +47,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:textSize="40sp"
-        android:gravity="center_vertical"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="@+id/clock"
         app:layout_constraintStart_toStartOf="@+id/score_counter"
         app:layout_constraintTop_toBottomOf="@+id/qnwhat_qnno" />
@@ -116,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="@+id/multiplication_operation"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/division_operation"
-        app:layout_constraintTop_toBottomOf="@+id/display_equation"
+        app:layout_constraintTop_toBottomOf="@+id/division_operation"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

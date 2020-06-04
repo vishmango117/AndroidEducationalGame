@@ -113,10 +113,13 @@ public class Game2Fragment extends Fragment {
 
     private void getNextQuestion() {
         if(questionCounter < 5) {
-            currentQn = new Question(prng.nextInt(10),prng.nextInt(10));
-            if(currentQn.number1 > currentQn.number2) {
-                currentQn.getAnswer();
+            while(true) {
+                currentQn = new Question(prng.nextInt(50), prng.nextInt(50));
+                if(!(currentQn.number1 < currentQn.number2 && currentQn.operation.equals("/"))) {
+                    break;
+                }
             }
+            currentQn.getAnswer();
             displayEquation.setText(currentQn.number1 + "[]" + currentQn.number2 + "=" + currentQn.answer);
             ScoreDisplay.setText("Score"+ score);
             questionCounter++;
@@ -126,7 +129,6 @@ public class Game2Fragment extends Fragment {
             confirmbutton.setText("Confirm");
             timeLeftMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
-
         }
         else if(questionCounter == 5) {
             NavHostFragment.findNavController(Game2Fragment.this)

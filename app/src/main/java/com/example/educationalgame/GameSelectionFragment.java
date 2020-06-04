@@ -62,14 +62,14 @@ public class GameSelectionFragment extends Fragment {
                 startActivity(myintent);
             }
         });
-        // For the Fourth Game Sum them Up..
-        fourthGame = view.findViewById(R.id.fourth_game);
-        fourthGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(GameSelectionFragment.this)
-                        .navigate(R.id.action_gameSelectionFragment_to_game1Fragment);
-            }
-        });
+//        // For the Fourth Game Sum them Up..
+//        fourthGame = view.findViewById(R.id.fourth_game);
+//        fourthGame.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                NavHostFragment.findNavController(GameSelectionFragment.this)
+//                        .navigate(R.id.action_gameSelectionFragment_to_game1Fragment);
+//            }
+//        });
     }
 }
