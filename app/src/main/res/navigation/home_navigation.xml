@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph2"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/MainMenuFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/MainMenuFragment"
         android:name="com.example.educationalgame.MainMenuFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_main_menu">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SettingsFragment"
-            app:destination="@id/SettingsFragment" />
+            android:id="@+id/action_MainMenuFragment_to_SettingsFragment"
+            app:destination="@id/StatsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SettingsFragment"
-        android:name="com.example.educationalgame.SettingsFragment"
+        android:id="@+id/StatsFragment"
+        android:name="com.example.educationalgame.StatsFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_play">
+        tools:layout="@layout/fragment_stats">
 
         <action
-            android:id="@+id/action_SettingsFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_StatsFragment_to_MainMenuFragment"
+            app:destination="@id/MainMenuFragment" />
     </fragment>
 </navigation>

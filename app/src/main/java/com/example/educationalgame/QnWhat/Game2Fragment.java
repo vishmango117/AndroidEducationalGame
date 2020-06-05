@@ -130,7 +130,7 @@ public class Game2Fragment extends Fragment {
             timeLeftMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
         }
-        else if(questionCounter == 5) {
+        else if(questionCounter == 6) {
             NavHostFragment.findNavController(Game2Fragment.this)
                     .navigate(R.id.action_game2Fragment_to_gameSelectionFragment);
         }

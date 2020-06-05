@@ -15,6 +15,7 @@ public class MainMenuFragment extends Fragment {
 
     private Button playButton;
     private Button howtoButton;
+    private Button settings;
 
 
     @Override
@@ -49,14 +50,12 @@ public class MainMenuFragment extends Fragment {
             }
         });
 
-
-
-//        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                NavHostFragment.findNavController(MainMenuFragment.this)
-//                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
-//            }
-//        });
+        view.findViewById(R.id.settings_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainMenuFragment.this)
+                        .navigate(R.id.action_MainMenuFragment_to_SettingsFragment);
+            }
+        });
     }
 }
